@@ -1,0 +1,30 @@
+{
+  "name": "leagueofhouses",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaymeramsay/LeagueOfHouses.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaymeramsay/LeagueOfHouses/issues"
+  },
+  "homepage": "",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4",
+    "pg": "^7.4.3",
+    "supertest": "^3.1.0"
+  }
+}
