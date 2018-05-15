@@ -1,0 +1,64 @@
+const express = require('express');
+const router = express.Router();
+const knex = require('../db/knex');
+
+// const bcrypt = require('bcrypt-as-promised');
+
+router.get('/', (req, res) => {
+  knex('users')
+    .then((users) => {
+      res.send(users)
+    })
+    .catch((err) => {
+      next(err)
+    });
+});
+
+router.get('/:id', (req, res) => {
+  knex('users')
+    .where({
+      id: req.params.id
+    })
+    .first()
+    .then((user) => {
+      res.send(user)
+    })
+    .catch((err) => {
+      next(err);
+    });
+})
+
+// router.post('/', (req, res) => {
+// let newUser = {
+// first_name: req.body.first_name,
+//   last_name: req.body.last_name,
+//   email: req.body.email
+// }
+//   knex('users')
+//     .insert(newUser)
+//     .then((user) => {
+//       res.send(users)
+//     })
+//     .catch((err) => {
+//       next(err);
+//     });
+// })
+//
+// router.patch('/:id', (req, res) => {
+//   knex('users')
+//   .where({
+//     id: req.params.id
+//   })
+//   .first()
+//   .update({
+//     first_name: req.body.first_name,
+//     last_name: req.body.last_name,
+//     email: req.body.email,
+//     salary: req.body.salary
+//   })
+//     .then(() => {
+//       res.send('user updated')
+//     })
+// })
+
+module.exports = router;
